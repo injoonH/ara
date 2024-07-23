@@ -1,0 +1,18 @@
+{
+  "extends": "@ara/typescript-config/nextjs.json",
+  "include": [
+    "next-env.d.ts",
+    "next.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    "plugins": [{ "name": "next" }]
+  }
+}

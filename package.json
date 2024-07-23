@@ -1,0 +1,26 @@
+{
+  "name": "ara",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier -c -w .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*": "prettier -c -w"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "husky": "^9.1.1",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.9",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

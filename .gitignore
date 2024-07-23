@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Env files
+.env*
+
+# Turbo
+.turbo/
+
+# Vercel
+.vercel/
+
+# Build Outputs
+build/
+dist/
+out/
+
+# Misc
+.DS_Store
+*.pem

@@ -1,0 +1,4 @@
+{
+  "extends": "@ara/typescript-config/hono.json",
+  "exclude": ["node_modules", "dist"]
+}
