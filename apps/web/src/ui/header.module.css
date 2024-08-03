@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: auto;
+  max-width: 93.6rem;
+  padding: 1.2rem 0;
+}
+
+.logo {
+  display: block;
+
+  & > img {
+    display: block;
+  }
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.postSubmitButton {
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+
+  border: 1px solid #ed3a3a;
+  border-radius: 0.8rem;
+  outline: none;
+  padding: 0.5rem 1.2rem;
+
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #ed3a3a;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #ed3a3a;
+
+    color: #fff;
+  }
+}
+
+.avatar {
+  display: block;
+
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  & > img {
+    display: block;
+  }
+}

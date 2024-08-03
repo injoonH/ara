@@ -1,9 +1,6 @@
-import { Button } from '@ara/ui/button'
-
-const HomePage = () => (
+const HomePage: React.FC = () => (
   <main>
     <h1>Ara</h1>
-    <Button>Button</Button>
   </main>
 )
 

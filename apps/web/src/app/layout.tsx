@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { pretendard } from '@/font'
 import '@/style/global.css'
+import { Header } from '@/ui/header'
 
 export const metadata: Metadata = {
   title: 'Ara',
@@ -10,7 +11,10 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <html lang="ko-KR">
-    <body className={pretendard.className}>{children}</body>
+    <body className={pretendard.className}>
+      <Header />
+      {children}
+    </body>
   </html>
 )
 
