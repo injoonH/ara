@@ -4,12 +4,13 @@ import { logger } from 'hono/logger'
 
 import { env } from '@/env'
 import auth from '@/route/auth'
+import board from '@/route/board'
 
 const app = new Hono({ strict: false })
 
 app.use(logger())
 
-const routes = app.route('/auth', auth)
+const routes = app.route('/auth', auth).route('/boards', board)
 export type AppType = typeof routes
 
 serve({
