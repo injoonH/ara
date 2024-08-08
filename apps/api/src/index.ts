@@ -1,13 +1,16 @@
 import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
+import { logger } from 'hono/logger'
 
 import { env } from '@/env'
+import auth from '@/route/auth'
 
-const app = new Hono()
+const app = new Hono({ strict: false })
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.use(logger())
+
+const routes = app.route('/auth', auth)
+export type AppType = typeof routes
 
 serve({
   fetch: app.fetch,

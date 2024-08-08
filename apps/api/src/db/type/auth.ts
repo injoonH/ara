@@ -12,7 +12,8 @@ export const authUserInsertSchema = createInsertSchema(authUser, {
   username: (schema) => schema.username.min(5),
   displayName: (schema) => schema.displayName.min(5),
   email: (schema) => schema.email.email(),
-})
+  password: z.string(),
+}).omit({ id: true, createdAt: true, updatedAt: true })
 export type AuthUserInsertSchema = z.infer<typeof authUserInsertSchema>
 
 export const authKaistInsertSchema = createInsertSchema(authKaist, {
