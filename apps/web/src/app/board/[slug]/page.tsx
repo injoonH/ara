@@ -1,4 +1,5 @@
 import { BoardAside, BoardAsideLink, BoardAsideSection } from '@/ui/board-aside'
+import { PostRow, PostRowList, PostRowProfileWithPreview } from '@/ui/post-row'
 
 import styles from './page.module.css'
 
@@ -60,16 +61,36 @@ const BoardPage: React.FC<BoardPageProps> = ({ params }) => {
         <div className={styles.header}>
           <h1 className={styles.title}>무슨 게시판 ({params.slug})</h1>
         </div>
+        <PostRowList>
+          {[...Array(15)].map((_, i) => (
+            <PostRow
+              key={i}
+              postId={i}
+              title="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum porro reiciendis vitae exercitationem asperiores est libero facere iure velit suscipit?"
+              left={
+                <PostRowProfileWithPreview
+                  primary={{ src: '/image/game.svg', alt: 'game' }}
+                  secondary={{ src: '/image/user-avatar.svg', alt: 'profile' }}
+                />
+              }
+              subInfo={{
+                author: 'Lorem Ipsum',
+                view: 42,
+                createdAt: new Date('2003-06-17'),
+              }}
+            />
+          ))}
+        </PostRowList>
       </main>
       <BoardAside>
         <BoardAsideSection title="인기">
-          {top.map(({ href, title }) => (
-            <BoardAsideLink key={href} href={href} title={title} />
+          {top.map(({ href, title }, idx) => (
+            <BoardAsideLink key={idx} href={href} title={title} />
           ))}
         </BoardAsideSection>
         <BoardAsideSection title="호주머니">
-          {pocket.map(({ href, title }) => (
-            <BoardAsideLink key={href} href={href} title={title} />
+          {pocket.map(({ href, title }, idx) => (
+            <BoardAsideLink key={idx} href={href} title={title} />
           ))}
         </BoardAsideSection>
       </BoardAside>
