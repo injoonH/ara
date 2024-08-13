@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { client } from '@/lib/api'
 import {
   NavMenu,
   NavMenuGroup,
@@ -10,7 +11,10 @@ import {
 
 import styles from './header.module.css'
 
-export const Header: React.FC = () => {
+export const Header: React.FC = async () => {
+  const res = await client.boards.grouped.$get()
+  const boardGroups = await res.json()
+
   return (
     <div>
       <header className={styles.header}>
@@ -23,42 +27,31 @@ export const Header: React.FC = () => {
         <NavMenu>
           <NavMenuLink title="전체" href="/board/all" />
           <NavMenuLink title="인기" href="/board/top" />
-          <NavMenuLink title="자유" href="/board/free" />
-          <NavMenuGroup title="공지">
-            <NavMenuGroupItem
-              title="운영 공지"
-              href="/board/management-announcement"
-            />
-            <NavMenuGroupItem
-              title="포탈 공지"
-              href="/board/portal-announcement"
-            />
-            <NavMenuGroupItem
-              title="입주 업체 공지"
-              href="/board/internal-announcement"
-            />
-            <NavMenuGroupItem title="광고" href="/board/advertisement" />
-          </NavMenuGroup>
-          <NavMenuGroup title="학생단체 및 동아리">
-            <NavMenuGroupItem title="학생 단체" href="/board/students" />
-            <NavMenuGroupItem title="동아리" href="/board/club" />
-          </NavMenuGroup>
-          <NavMenuGroup title="거래">
-            <NavMenuGroupItem title="부동산" href="/board/real-estate" />
-            <NavMenuGroupItem
-              title="중고 거래"
-              href="/board/second-hand-trade"
-            />
-            <NavMenuGroupItem title="구인" href="/board/recruitment" />
-          </NavMenuGroup>
-          <NavMenuGroup title="소통">
-            <NavMenuGroupItem
-              title="학교에게 전합니다"
-              href="/board/talk-to-school"
-            />
-            <NavMenuGroupItem title="카이스트 신문" href="/board/news" />
-            <NavMenuGroupItem title="Ara 피드백" href="/board/ara-feedback" />
-          </NavMenuGroup>
+          {boardGroups.map(({ id, name, boards }) => {
+            if (boards.length === 0) {
+              return null
+            }
+            if (boards.length === 1) {
+              return (
+                <NavMenuLink
+                  key={id}
+                  title={name}
+                  href={`/board/${boards[0]!.slug}`}
+                />
+              )
+            }
+            return (
+              <NavMenuGroup key={id} title={name}>
+                {boards.map(({ id, name, slug }) => (
+                  <NavMenuGroupItem
+                    key={id}
+                    title={name}
+                    href={`/board/${slug}`}
+                  />
+                ))}
+              </NavMenuGroup>
+            )
+          })}
         </NavMenu>
 
         {/* Right Section */}

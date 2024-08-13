@@ -1,3 +1,6 @@
+import { notFound } from 'next/navigation'
+
+import { client } from '@/lib/api'
 import { BoardAside, BoardAsideLink, BoardAsideSection } from '@/ui/board-aside'
 import { PostRow, PostRowList, PostRowProfileWithPreview } from '@/ui/post-row'
 
@@ -54,12 +57,22 @@ type BoardPageProps = {
   }
 }
 
-const BoardPage: React.FC<BoardPageProps> = ({ params }) => {
+const BoardPage: React.FC<BoardPageProps> = async ({ params }) => {
+  const boardRes = await client.boards.slug[':slug'].$get({
+    param: { slug: params.slug },
+  })
+
+  if (!boardRes.ok) {
+    notFound()
+  }
+
+  const board = await boardRes.json()
+
   return (
     <div className={styles.allWrapper}>
       <main className={styles.main}>
         <div className={styles.header}>
-          <h1 className={styles.title}>무슨 게시판 ({params.slug})</h1>
+          <h1 className={styles.title}>{board.name}</h1>
         </div>
         <PostRowList>
           {[...Array(15)].map((_, i) => (
