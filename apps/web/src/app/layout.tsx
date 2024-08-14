@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { pretendard } from '@/font'
 import '@/style/global.css'
+import { Footer } from '@/ui/footer/footer'
 import { Header } from '@/ui/header/header'
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     <body className={pretendard.className}>
       <Header />
       {children}
+      <Footer />
     </body>
   </html>
 )

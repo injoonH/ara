@@ -1,7 +1,7 @@
 const TermsPage: React.FC = () => (
-  <div>
+  <main>
     <h1>Terms</h1>
-  </div>
+  </main>
 )
 
 export default TermsPage
