@@ -12,6 +12,7 @@
     "@ara/api": "workspace:*",
     "@ara/ui": "workspace:*",
     "@t3-oss/env-nextjs": "^0.11.0",
+    "clsx": "^2.1.1",
     "hono": "^4.5.1",
     "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-f994737d14-20240522",

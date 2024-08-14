@@ -19,3 +19,17 @@
   line-height: 2.8rem;
   font-weight: 700;
 }
+
+@media screen and (730px < width <= 1080px) {
+  .allWrapper {
+    margin-left: 7.2rem;
+    margin-right: 7.2rem;
+  }
+}
+
+@media screen and (width <= 730px) {
+  .allWrapper {
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+}

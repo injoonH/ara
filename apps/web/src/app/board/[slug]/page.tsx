@@ -1,8 +1,16 @@
 import { notFound } from 'next/navigation'
 
 import { client } from '@/lib/api'
-import { BoardAside, BoardAsideLink, BoardAsideSection } from '@/ui/board-aside'
-import { PostRow, PostRowList, PostRowProfileWithPreview } from '@/ui/post-row'
+import {
+  BoardAside,
+  BoardAsideLink,
+  BoardAsideSection,
+} from '@/ui/board/board-aside'
+import {
+  PostRow,
+  PostRowList,
+  PostRowProfileWithPreview,
+} from '@/ui/post/post-row'
 
 import styles from './page.module.css'
 

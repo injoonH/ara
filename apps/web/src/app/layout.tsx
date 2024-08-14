@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { pretendard } from '@/font'
 import '@/style/global.css'
-import { Header } from '@/ui/header'
+import { Header } from '@/ui/header/header'
 
 export const metadata: Metadata = {
   title: 'Ara',

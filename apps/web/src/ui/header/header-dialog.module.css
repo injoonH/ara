@@ -1,0 +1,39 @@
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(100%);
+  }
+}
+
+.dialog {
+  animation: slideInLeft 0.2s ease-out;
+
+  margin-right: 0;
+  border-top-left-radius: 1.6rem;
+  width: clamp(20rem, calc(100vw - 2rem), 26rem);
+  height: 100svh;
+  max-height: none;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::backdrop {
+    background-color: rgb(0 0 0 / 0.1);
+  }
+}
+
+.closeButton {
+  margin: 2rem;
+
+  background-color: transparent;
+
+  svg {
+    display: block;
+  }
+}
+
+@media screen and (width > 1080px) {
+  .dialog {
+    display: none;
+  }
+}

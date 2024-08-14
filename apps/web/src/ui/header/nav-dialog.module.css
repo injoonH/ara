@@ -1,0 +1,88 @@
+.rootList {
+  padding: 0 0.8rem;
+
+  list-style-type: none;
+
+  & > li:not(:last-child) {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.navLink {
+  display: block;
+}
+
+.listItem {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #ed3a3a;
+  }
+}
+
+.divider {
+  margin: 2rem 1.2rem;
+  border: none;
+  height: 1px;
+
+  background-color: #e9e9e9;
+}
+
+.dropdownButton {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 0.4rem;
+  width: 100%;
+
+  background-color: transparent;
+
+  &:hover,
+  &[aria-expanded='true'] {
+    color: #ed3a3a;
+  }
+}
+
+.chevron {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  margin-left: 0.4rem;
+
+  .dropdownButton[aria-expanded='true'] & {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdownList {
+  padding-left: 0.8rem;
+
+  list-style-type: none;
+
+  .dropdownButton[aria-expanded='false'] + & {
+    display: none;
+  }
+}
+
+.dropdownLink {
+  display: block;
+
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navLink,
+.dropdownButton,
+.dropdownLink {
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.2rem;
+
+  &:hover {
+    background-color: #fafafa;
+  }
+}

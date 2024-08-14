@@ -3,9 +3,9 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: auto;
+  margin: 0 auto;
   max-width: 93.6rem;
-  padding: 1.2rem 0;
+  height: 5rem;
 }
 
 .logo {
@@ -55,5 +55,41 @@
 
   & > img {
     display: block;
+  }
+}
+
+.iconButton {
+  background-color: transparent;
+
+  color: inherit;
+
+  svg {
+    display: block;
+  }
+}
+
+@media screen and (width > 1080px) {
+  .iconButton {
+    display: none;
+  }
+}
+
+@media screen and (width <= 1080px) {
+  .nav,
+  .postSubmitButton,
+  .avatar {
+    display: none;
+  }
+}
+
+@media screen and (730px < width <= 1080px) {
+  .header {
+    margin: 0 7.2rem;
+  }
+}
+
+@media screen and (width <= 730px) {
+  .header {
+    margin: 0 1.6rem;
   }
 }

@@ -30,13 +30,7 @@ export const NavMenuGroup: React.FC<{
   <li className={styles.dropdownGroup}>
     <div tabIndex={0} className={styles.dropdownGroupTitleWrapper}>
       <span className={styles.listItem}>{title}</span>
-      {chevron && (
-        <ChevronDown
-          width={12}
-          height={12}
-          className={styles.dropdownChevron}
-        />
-      )}
+      {chevron && <ChevronDown size={12} className={styles.dropdownChevron} />}
     </div>
     <div className={styles.dropdownListWrapper}>
       <ul className={styles.dropdownList}>{children}</ul>
