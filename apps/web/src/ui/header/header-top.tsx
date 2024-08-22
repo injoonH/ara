@@ -64,7 +64,7 @@ export const HeaderTop: React.FC<HeaderTopProps> = ({
     {/* Right Section */}
     <div className={styles.rightSection}>
       {/* Post submit */}
-      <Link href="/post/submit" className={styles.postSubmitButton}>
+      <Link href="/submit" className={styles.postSubmitButton}>
         게시물 작성하기
       </Link>
 
@@ -79,7 +79,7 @@ export const HeaderTop: React.FC<HeaderTopProps> = ({
         />
       </Link>
 
-      <Link href="/post/submit" className={styles.iconButton}>
+      <Link href="/submit" className={styles.iconButton}>
         <Edit size={20} />
       </Link>
       <button onClick={openNavDialog} className={styles.iconButton}>

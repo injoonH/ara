@@ -1,0 +1,27 @@
+.codeBlock {
+  margin: 2.4rem 0;
+  border-radius: 0.8rem;
+  padding-top: 0.8rem;
+
+  background-color: #1a1b26;
+
+  pre {
+    margin: 0;
+  }
+}
+
+.select {
+  display: block;
+
+  margin-left: auto;
+  margin-right: 0.8rem;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.6rem;
+
+  background-color: hsl(235 19% 40% / 0.5);
+
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #d5d5d5;
+}

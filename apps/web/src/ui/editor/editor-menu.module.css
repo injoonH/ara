@@ -1,0 +1,53 @@
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  margin-bottom: 1.2rem;
+
+  list-style-type: none;
+
+  & > hr {
+    margin: 0.4rem 0;
+    border: none;
+    width: 2px;
+
+    background-color: #f1f5f9;
+  }
+}
+
+.menuGroup {
+  display: flex;
+  gap: 0.4rem;
+
+  list-style-type: none;
+}
+
+.menuButton {
+  border-radius: 1.6rem;
+  height: 3.2rem;
+  padding: 0 0.8rem;
+
+  background-color: transparent;
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgb(2 32 71 / 0.05);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  & > svg:first-child {
+    display: block;
+
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.active {
+  background-color: #e2e8f0;
+}

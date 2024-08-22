@@ -11,6 +11,7 @@ body {
 
   font-size: 1.6rem;
   word-break: keep-all;
+  font-family: var(--font-pretendard);
 }
 
 input {

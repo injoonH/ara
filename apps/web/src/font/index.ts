@@ -6,3 +6,8 @@ export const pretendard = localFont({
   weight: '45 920',
   variable: '--font-pretendard',
 })
+
+export const jetBrainsMono = localFont({
+  src: './JetBrainsMono[wght].ttf',
+  variable: '--font-jetbrains-mono',
+})

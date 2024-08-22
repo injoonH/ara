@@ -1,0 +1,20 @@
+.wrapper {
+  overflow: hidden;
+
+  border: 1px solid #e4e4e7;
+  border-radius: 1.5rem;
+  padding: 1.2rem 1.6rem;
+
+  &:focus-within {
+    border-color: rgb(0 0 0 / 0.3);
+  }
+}
+
+.editor {
+  min-height: 40rem;
+  padding: 0 0.8rem;
+
+  &:focus {
+    outline: none;
+  }
+}
