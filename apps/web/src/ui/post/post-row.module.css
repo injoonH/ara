@@ -65,7 +65,7 @@
   line-height: 1.8rem;
   color: #b5b5b5;
 
-  li:not(:last-child)::after {
+  & > li:not(:last-child)::after {
     content: '·';
 
     margin: 0 0.4rem;

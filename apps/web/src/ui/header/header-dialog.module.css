@@ -27,7 +27,7 @@
 
   background-color: transparent;
 
-  svg {
+  & > svg {
     display: block;
   }
 }
