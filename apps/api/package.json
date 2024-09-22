@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "tsup src/index.ts --minify --format cjs,esm --dts",
+    "build:image": "docker build -f .docker/api.Dockerfile -t sparcs/ara-api ../..",
     "db": "docker compose -f .docker/docker-compose.dev.yml",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

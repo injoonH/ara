@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Docker
+.docker/
+
+# Git
+.git/
+.gitignore
+
+# Turbo
+.turbo/
+
+# Build Outputs
+dist/
+
+# Misc
+.DS_Store
+*.pem

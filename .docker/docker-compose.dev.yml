@@ -6,7 +6,6 @@ services:
     container_name: ara-dev-db
     ports:
       - '${DB_PORT:?err}:5432'
-    env_file: ../.env
     environment:
       - POSTGRES_USER=${DB_USER:?err}
       - POSTGRES_PASSWORD=${DB_PASSWORD:?err}

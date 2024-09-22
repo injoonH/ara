@@ -1,0 +1,31 @@
+name: ara-prod
+
+services:
+  api:
+    container_name: ara-prod-api
+    build:
+      context: ..
+      dockerfile: apps/api/Dockerfile
+    restart: unless-stopped
+    ports:
+      - '${API_PORT:?err}:${API_PORT:?err}'
+    env_file: ../apps/api/.env
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+
+  db:
+    container_name: ara-prod-db
+    image: postgres:16.3
+    restart: unless-stopped
+    ports:
+      - '${DB_PORT:?err}:5432'
+    environment:
+      - POSTGRES_USER=${DB_USER:?err}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:?err}
+      - POSTGRES_DB=${DB_NAME:?err}
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
